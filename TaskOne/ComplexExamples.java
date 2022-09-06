@@ -105,11 +105,6 @@ public class ComplexExamples {
         System.out.println();
 
 
-        /** Не влез в один стрим, поэтому вывод через foreach
-         * В основном, проблема в терминальном методе, сигнатура ругалась на значения
-         * Буду благодарен за правки и подсказки, как уместить все в более лаконичную форму :)
-         */
-
         Map<String, Long> sortedData = Arrays.stream(RAW_DATA)
                 .distinct()
                 .collect(groupingBy(Person:: getName,
