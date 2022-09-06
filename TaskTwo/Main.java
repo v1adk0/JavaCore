@@ -2,6 +2,7 @@ package TaskTwo;
 
 import java.util.Arrays;
 
+
 public class Main {
 
        static void sumOf(int[] arr, int sum) {
