@@ -138,7 +138,6 @@ public class ComplexExamples {
          */
 
 
-
         /*
         Task3
             Реализовать функцию нечеткого поиска
@@ -150,7 +149,6 @@ public class ComplexExamples {
                     fuzzySearch("cwheeel", "cartwheel"); // false
                     fuzzySearch("lw", "cartwheel"); // false
          */
-
 
     }
 }
