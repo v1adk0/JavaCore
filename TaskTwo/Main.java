@@ -1,25 +1,20 @@
 package TaskTwo;
 
+import java.util.Arrays;
+
 public class Main {
 
-    public static void main(String[] args) {
+       static void sumOf(int[] arr, int sum) {
+           int[] res = new int[2];
 
-        int[] arr = {5, 6, 3, 2, 5, 1, 4, 9};
+           for (int i : arr) {
+               for (int j = arr.length - 1; j > 0; j--) {
+                   if ((i + arr[j] == sum)) {
+                       res = new int[]{i, arr[j]};
+                   }
+               }
+           }
+           System.out.println(Arrays.toString(res));
+       }
 
-        for (int i = 0; i < arr.length; i++) {
-            int min = arr[i];
-            int count = i;
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[j] < min) {
-                    min = arr[j];
-                    count = j;
-                }
-            }
-            if (i != count) {
-                int tmp = arr[i];
-                arr[i] = arr[count];
-                arr[count] = tmp;
-            }
-        }
-    }
 }
