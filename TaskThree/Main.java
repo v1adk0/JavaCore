@@ -19,12 +19,10 @@ public class Main {
         String similar = "";
         if ((part != null) & (whole != null)) {
             similar = Arrays.stream(whole.split(""))
-                    .filter(ch -> part.contains(ch))
+                    .filter(part::contains)
                     .collect(Collectors.joining());
         }
-        if (similar.equals(part)) {
-            return true;
-        } else return false;
+        return similar.equals(part);
         }
     }
 
