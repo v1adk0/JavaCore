@@ -55,6 +55,18 @@ public class ComplexExamples {
             new Person(7, "Amelia"),
             new Person(8, "Amelia"),
     };
+
+    static void personSort(Person[] person) {
+        if (person == null)  person = new Person[0];
+        Map<String, Long> sortedData = Arrays.stream(person)
+                .distinct()
+                .collect(groupingBy(Person::getName,
+                        counting()));
+
+        for (Map.Entry<String, Long> item : sortedData.entrySet()) {
+            System.out.printf("Key: %s\nValue: %s\n", item.getKey(), item.getValue());
+        }
+    }
         /*  Raw data:
 
         0 - Harry
@@ -104,15 +116,7 @@ public class ComplexExamples {
         System.out.println("Duplicate filtered, grouped by name, sorted by name and id:");
         System.out.println();
 
-
-        Map<String, Long> sortedData = Arrays.stream(RAW_DATA)
-                .distinct()
-                .collect(groupingBy(Person:: getName,
-                        counting()));
-
-        for(Map.Entry<String, Long> item : sortedData.entrySet()){
-            System.out.printf("Key: %s\nValue: %s\n", item.getKey(), item.getValue());
-        }
+//        personSort(RAW_DATA);
 
         /*
         Task1
