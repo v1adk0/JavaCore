@@ -1,11 +1,11 @@
 package TaskOne;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Map;
 import java.util.Objects;
 
-import static java.util.stream.Collectors.counting;
-import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.*;
 
 
 public class ComplexExamples {
@@ -57,9 +57,12 @@ public class ComplexExamples {
     };
 
     static void personSort(Person[] person) {
-        if (person == null)  person = new Person[0];
+        if (person == null)  {
+            person = new Person[0];
+        }
         Map<String, Long> sortedData = Arrays.stream(person)
                 .distinct()
+                .sorted(Comparator.comparing(Person::getId))
                 .collect(groupingBy(Person::getName,
                         counting()));
 
@@ -116,7 +119,7 @@ public class ComplexExamples {
         System.out.println("Duplicate filtered, grouped by name, sorted by name and id:");
         System.out.println();
 
-//        personSort(RAW_DATA);
+        personSort(RAW_DATA);
 
         /*
         Task1
